@@ -53,7 +53,7 @@ const DEFAULT_OPTS = {
   .concat(depsExternal)
 };
 
-const icon = argv.icon || argv.i || 'app/app';
+const icon = argv.icon || argv.i || 'app/icon';
 if (icon) DEFAULT_OPTS.icon = icon;
 
 const version = argv.version || argv.v;

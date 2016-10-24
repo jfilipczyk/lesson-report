@@ -9,15 +9,22 @@ import merge from 'webpack-merge';
 import baseConfig from './webpack.config.base';
 
 const config = validate(merge(baseConfig, {
-  devtool: 'cheap-module-source-map',
+  devtool: 'source-map',
 
-  entry: [
-    'babel-polyfill',
-    './app/index'
-  ],
+  entry: {
+    gui: [
+      'babel-polyfill',
+      './src/gui/index'
+    ],
+    background: [
+      'babel-polyfill',
+      './src/background/index'
+    ]
+  },
 
   output: {
-    publicPath: '../dist/'
+    publicPath: '../dist/',
+    filename: '[name].entry.js'
   },
 
   module: {

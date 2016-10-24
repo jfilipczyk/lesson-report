@@ -1,0 +1,18 @@
+.form {
+  width: 400px;
+  margin: auto;
+}
+
+.progress {
+  margin-top: 20px;
+}
+
+.successMsg {
+  margin-top: 20px;
+  color: green;
+}
+
+.errorMsg {
+  margin-top: 20px;
+  color: #f44336;
+}

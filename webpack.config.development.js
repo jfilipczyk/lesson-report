@@ -15,16 +15,24 @@ const port = process.env.PORT || 3000;
 export default validate(merge(baseConfig, {
   debug: true,
 
-  devtool: 'cheap-module-eval-source-map',
+  devtool: 'source-map',
 
-  entry: [
-    `webpack-hot-middleware/client?path=http://localhost:${port}/__webpack_hmr`,
-    'babel-polyfill',
-    './app/index'
-  ],
+  entry: {
+    gui: [
+      `webpack-hot-middleware/client?path=http://localhost:${port}/__webpack_hmr`,
+      'babel-polyfill',
+      './src/gui/index'
+    ],
+    background: [
+      `webpack-hot-middleware/client?path=http://localhost:${port}/__webpack_hmr`,
+      'babel-polyfill',
+      './src/background/index'
+    ]
+  },
 
   output: {
-    publicPath: `http://localhost:${port}/dist/`
+    publicPath: `http://localhost:${port}/dist/`,
+    filename: '[name].entry.js'
   },
 
   module: {
