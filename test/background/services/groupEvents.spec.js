@@ -1,7 +1,7 @@
 /* eslint-disable func-names */
 import { expect } from 'chai';
 import moment from 'moment';
-import groupEvents from './../../../src/background/services/groupEvents';
+import groupEvents from './../../../app/background/services/groupEvents';
 
 describe('groupEvents', () => {
   it('groups events by summary string', () => {

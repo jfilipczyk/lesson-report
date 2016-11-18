@@ -17,14 +17,13 @@ module.exports = {
     "no-cond-assign": ["error", "except-parens"],
     "promise/param-names": 2,
     "promise/always-return": 2,
-    "promise/always-catch": 2, // deprecated
     "promise/catch-or-return": 2,
     "promise/no-native": 0,
     "react/jsx-no-bind": "off",
     "react/jsx-filename-extension": ["error", { "extensions": [".js", ".jsx"] }],
     "react/prop-types": "off",
     "react/prefer-stateless-function": "warn",
-    "flowtype-errors/show-errors": 2,
+    "flowtype-errors/show-errors": 2
   },
   "plugins": [
     "flowtype-errors",
@@ -39,4 +38,4 @@ module.exports = {
       }
     }
   }
-}
+};

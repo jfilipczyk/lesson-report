@@ -1,0 +1,15 @@
+{
+  "name": "lesson-report",
+  "productName": "lesson-report",
+  "version": "1.0.0",
+  "description": "Creates settlement report based on teacher calendar",
+  "main": "./main.js",
+  "author": {
+    "name": "Jakub Filipczyk",
+    "email": "j.filipczyk@gmail.com",
+    "url": "https://github.com/jfilipczyk"
+  },
+  "license": "MIT",
+  "dependencies": {
+  }
+}

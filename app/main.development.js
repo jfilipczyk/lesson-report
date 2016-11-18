@@ -20,7 +20,7 @@ const installExtensions = async () => {
       'REDUX_DEVTOOLS'
     ];
     const forceDownload = !!process.env.UPGRADE_EXTENSIONS;
-    for (const name of extensions) {
+    for (const name of extensions) { // eslint-disable-line
       try {
         await installer.default(installer[name], forceDownload);
       } catch (e) {} // eslint-disable-line
@@ -38,14 +38,14 @@ app.on('ready', async () => {
     height: 500
   });
 
-  mainWindow.loadURL(`file://${__dirname}/src/gui/index.html`);
+  mainWindow.loadURL(`file://${__dirname}/gui/index.html`);
 
   backgroundWindow = new BrowserWindow({
     title: 'Background',
     show: process.env.NODE_ENV === 'development'
   });
 
-  backgroundWindow.loadURL(`file://${__dirname}/src/background/index.html`);
+  backgroundWindow.loadURL(`file://${__dirname}/background/index.html`);
 
   mainWindow.webContents.on('did-finish-load', () => {
     mainWindow.show();
@@ -54,6 +54,11 @@ app.on('ready', async () => {
 
   mainWindow.on('closed', () => {
     mainWindow = null;
+    backgroundWindow.close();
+  });
+
+  backgroundWindow.on('closed', () => {
+    backgroundWindow = null;
   });
 
   if (process.env.NODE_ENV === 'development') {

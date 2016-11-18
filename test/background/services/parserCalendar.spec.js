@@ -1,7 +1,7 @@
 /* eslint-disable func-names */
 import { expect } from 'chai';
 import * as fs from 'fs';
-import parseCalendar from './../../../src/background/services/parseCalendar';
+import parseCalendar from './../../../app/background/services/parseCalendar';
 
 describe('Parser service', () => {
   it('returns array of events', () => {
